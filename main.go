@@ -5,15 +5,17 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello World! First test!")
-	num := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	printEven(num...)
-}
+	mySlice := make([]int, 0, 5)
+	fmt.Println("-------------------")
+	fmt.Println(mySlice)
+	fmt.Println(len(mySlice))
+	fmt.Println(cap(mySlice))
+	fmt.Println("-------------------")
 
-func printEven(number ...int) {
-	for _, n := range number {
-		if n%2 == 0 {
-			fmt.Println(n)
+	for i := 0; i < 40; i++ {
+		if i < 50 {
+			mySlice = append(mySlice, i)
+			fmt.Println("Len: ", len(mySlice), "Capacity: ", cap(mySlice))
 		}
 	}
 }
